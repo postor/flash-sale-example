@@ -3,7 +3,7 @@ yii2 queue 任务系统演示（模拟处理抢购的高压力场景）
 
 官方github https://github.com/zhuravljov/yii2-queue
 
-## [部署方法](###)
+## 部署方法
 
 ### redis安装
 https://redis.io/topics/quickstart
@@ -60,8 +60,10 @@ yii queue-chained/listen
 ```
 
 
-### [vegeta安装](https://github.com/tsenart/vegeta/releases)
+### vegeta安装
+vegeta下载：https://github.com/tsenart/vegeta/releases
 将vegeta.exe放到项目目录即可
+
 ### 启动压测命令
 ```
 cd \项目目录\
