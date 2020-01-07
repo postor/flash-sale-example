@@ -51,15 +51,10 @@ http://localhost:8080/index.php?r=site/store&add=100
 
 ### 启动 worker | start workers
 
-打开两个cmd窗口，分别执行
-
 ```
 yii queue/listen
 ```
 
-```
-yii queue-chained/listen
-```
 
 
 ### vegeta安装 | install vegeta

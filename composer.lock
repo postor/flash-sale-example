@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ee7dd7f16354c1592af0444cb63fa37",
+    "content-hash": "a505545631acb02df0925e640048dcde",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -680,16 +680,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "dev-master",
+            "version": "2.0.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "edf1c6ff82b1aca1c0648afae7dadf7562ca8a44"
+                "reference": "0329b2db8bbf9719b1add17d6defd2d6045b4f09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/edf1c6ff82b1aca1c0648afae7dadf7562ca8a44",
-                "reference": "edf1c6ff82b1aca1c0648afae7dadf7562ca8a44",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/0329b2db8bbf9719b1add17d6defd2d6045b4f09",
+                "reference": "0329b2db8bbf9719b1add17d6defd2d6045b4f09",
                 "shasum": ""
             },
             "require": {
@@ -776,7 +776,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2020-01-04T16:59:06+00:00"
+            "time": "2019-12-18T12:52:03+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -2543,12 +2543,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "5eefc2ef1d9d19595ec05f25922279c95cb2c87a"
+                "reference": "751614c461cfe0d9cf79729535a8066ef7fcd40f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5eefc2ef1d9d19595ec05f25922279c95cb2c87a",
-                "reference": "5eefc2ef1d9d19595ec05f25922279c95cb2c87a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/751614c461cfe0d9cf79729535a8066ef7fcd40f",
+                "reference": "751614c461cfe0d9cf79729535a8066ef7fcd40f",
                 "shasum": ""
             },
             "require": {
@@ -2618,7 +2618,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-12-31T13:37:22+00:00"
+            "time": "2020-01-06T16:57:45+00:00"
         },
         {
             "name": "psr/container",
@@ -2874,12 +2874,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "81601e236afb661d9ddb85a9d8467a6f1156cd2f"
+                "reference": "c961b8746a1eb3016d36494c1eb88f90c752c67c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/81601e236afb661d9ddb85a9d8467a6f1156cd2f",
-                "reference": "81601e236afb661d9ddb85a9d8467a6f1156cd2f",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/c961b8746a1eb3016d36494c1eb88f90c752c67c",
+                "reference": "c961b8746a1eb3016d36494c1eb88f90c752c67c",
                 "shasum": ""
             },
             "require": {
@@ -2887,7 +2887,7 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^7.5 || ^8.0",
-                "symfony/process": "^2 || ^3.3 || ^4 || ^5"
+                "symfony/process": "^4 || ^5"
             },
             "type": "library",
             "extra": {
@@ -2922,7 +2922,7 @@
                 "unidiff",
                 "unified diff"
             ],
-            "time": "2019-12-27T07:42:46+00:00"
+            "time": "2020-01-06T13:13:10+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -4281,10 +4281,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "yiisoft/yii2-queue": 20,
-        "yiisoft/yii2-redis": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
