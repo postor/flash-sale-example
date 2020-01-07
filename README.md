@@ -3,6 +3,8 @@ queue example
 
 队列系统演示（模拟处理抢购的高压力场景）| queue system example (mimic flash sale online)
 
+quick glance: https://www.youtube.com/watch?v=VDX_qhvDFRA&list=PLM1v95K5B1ntVsYvNJIxgRPppngrO_X4s
+
 预期数据流 | prefered data flow:
 
 ![data flow](./flow.jpg)
