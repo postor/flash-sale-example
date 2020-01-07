@@ -1,7 +1,7 @@
 <?php
 namespace app\commands\jobs;
 
-class Order extends \yii\base\Object implements \zhuravljov\yii\queue\Job
+class Order extends \yii\base\BaseObject implements \yii\queue\JobInterface
 {
   const KEY_STORE_LEFT = 'storeleft';  
   const KEY_STORE_TOTAL = 'storetotal';  
@@ -10,11 +10,9 @@ class Order extends \yii\base\Object implements \zhuravljov\yii\queue\Job
   public $user;
   public $redo = 0;
   
-  public function run()
+  public function execute($queue)
   {
     try{
-      $redis = \Yii::$app->redis;
-
       //已经成功的扔掉
       $userOrder = self::getUserOrder($this->user);
       if($userOrder && isset($userOrder['succeed']) && $userOrder['succeed']){

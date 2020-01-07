@@ -1,11 +1,11 @@
 <?php
 namespace app\commands\jobs;
 
-class Chained extends \yii\base\Object implements \zhuravljov\yii\queue\Job{
+class Chained extends \yii\base\BaseObject implements \yii\queue\JobInterface{
   public $user;
   public $redo;
   
-  public function run(){
-    echo "$this->user finished after retry $this->redo times \n";
+  public function execute($queue){
+    echo "$this->user finished after retry $this->redo times (queue = $queue)\n";
   }
 }

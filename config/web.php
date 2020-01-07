@@ -5,6 +5,10 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    'aliases' => [
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset',
+    ],
     'bootstrap' => ['log','queue'],
     'components' => [
         'request' => [
@@ -40,19 +44,19 @@ $config = [
         'db' => require(__DIR__ . '/db.php'),
         'redis' => [
             'class' => 'yii\redis\Connection',
-            'hostname' => '192.168.8.99',
+            'hostname' => '192.168.5.43',
             'port' => 6379,
             'database' => 2,
         ],
         'redis_for_queue' => [
             'class' => 'yii\redis\Connection',
-            'hostname' => '192.168.8.99',
+            'hostname' => '192.168.5.43',
             'port' => 6379,
             'database' => 1,
         ],
         'queue' => [
             //'class' => '\zhuravljov\yii\queue\sync\Queue',
-            'class' => 'zhuravljov\yii\queue\redis\Queue',
+            'class' => \yii\queue\redis\Queue::class,
             'redis' => 'redis_for_queue', // connection ID
             'channel' => 'queue', // queue channel
         ],

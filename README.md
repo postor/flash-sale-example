@@ -3,7 +3,11 @@ queue example
 
 队列系统演示（模拟处理抢购的高压力场景）| queue system example (mimic flash sale online)
 
+预期数据流 | prefered data flow:
+
 ![data flow](./flow.jpg)
+
+为了简化部署，移除了mysql的部分 | removed mysql for simplicity
 
 ## 部署方法 | deploy
 
@@ -17,8 +21,8 @@ https://redis.io/topics/quickstart
 # 可选步骤-更换composer源 https://pkg.phpcomposer.com/ | optional, change composer source
 php composer.phar config -g repo.packagist composer https://packagist.phpcomposer.com 
 
-# 安装 yii2-queue | install yii2-queue
-php composer.phar require --prefer-dist zhuravljov/yii2-queue
+# 安装依赖 | install packages
+php composer.phar install --prefer-dist
 ```
 
 ### 配置redis、mysql及队列 | config redis, mysql and queue
@@ -36,14 +40,16 @@ refer
 ./yii serve
 ```
 
-默认服务地址：http://localhost/index.php
-如果配置到其他地址，需要更改\项目目录\vegeta.urls.txt中的内容
+默认服务地址：http://localhost:8080/index.php | default serve path
 
-初始化redis，注意安web配置更改相应地址
-http://localhost/index.php?r=site/store&add=100
+如果配置到其他地址，需要更改 `./vegeta.urls.txt` 中的内容 | if changed, you need to change `./vegeta.urls.txt` accordingly
+
+打开此地址初始化redis，注意安web配置更改相应地址 | visit this url to init redis (change url accordingly)
+
+http://localhost:8080/index.php?r=site/store&add=100
 
 
-### 启动worker
+### 启动 worker | start workers
 
 打开两个cmd窗口，分别执行
 
@@ -56,21 +62,13 @@ yii queue-chained/listen
 ```
 
 
-### vegeta安装
+### vegeta安装 | install vegeta
+
 vegeta下载：https://github.com/tsenart/vegeta/releases
 将vegeta.exe放到项目目录即可
 
-### 启动压测命令
+### 启动压测命令 | start stress test
+
 ```
-cd \项目目录\
-stress
+stress.bat
 ```
-
-## 多通道（queue-chained）
-
-业务中有部分逻辑需要跑在win平台，或者docker内部，就需要将这一部分任务推到单独的队列中
-需要注意的是redis默认只能被本机访问，需要放开局域网访问权限，如果觉得不安全就加个密码验证吧
-
-
-## yii2-queue
-refer https://github.com/zhuravljov/yii2-queue

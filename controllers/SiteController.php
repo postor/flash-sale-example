@@ -59,20 +59,20 @@ class SiteController extends Controller
         if($order){
             if(isset($order['succeed'])){
                 if($order['succeed']){
-                    return '买到了！';
+                    return '买到了！| you got it!';
                 }else{
-                    return '差一点就买到了（晚了一点）';
+                    return '差一点就买到了（晚了一点）| failed to get one!';
                 }
             }
             
             $left = \app\commands\jobs\Order::getStore();
             if($left<0){
-                return '差一点就买到了（推任务时缓冲区满了）';
+                return '差一点就买到了（推任务时缓冲区满了）| failed to get one!';
             }else{
                 \Yii::$app->queue->push(new \app\commands\jobs\Order([
                     'user' => $user,
                 ]));
-                return '排队中。。。（推任务时缓冲区满，再次提交重新推任务）';
+                return '排队中。。。（推任务时缓冲区满，再次提交重新推任务）| still in queue!';
             }
             return json_encode($order);
         }
@@ -81,12 +81,12 @@ class SiteController extends Controller
         //检查库存
         $left = \app\commands\jobs\Order::getStore();
         if($left<=0){
-            return '已经无货了';
+            return '已经无货了 | no store left';
         }
 
         //检查排队过多
         if(\app\commands\jobs\Order::isOverQueue()){
-            return '排队的人已经过多，不用排队了';
+            return '排队的人已经过多，不用排队了 | enough queued people, no need to queue anymore';
         }
     
         //排队
